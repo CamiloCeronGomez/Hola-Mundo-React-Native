@@ -2,71 +2,104 @@
 import React, {Component} from 'react'
 import {View, Text, StyleSheet, Image, Button, Alert} from 'react-native'
 
-class holaCiapfa extends Component{
+class HolaCiapfa extends Component {
 
-	saludo = () => {Alert.alert('Mensaje de alerta Login')}
+  login(){
+    Alert.alert('Login de usuario')
+  }
 
-	render(){
+  render(){
 
-		return(
-			<View style={styles.container}>
+    return(
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <View style={styles.headerLeft}>
+              <Image source={require('./assets/CAMILO.png')} 
+              style={styles.logo}></Image>
+          </View>
+          <View style={styles.headerRight}>
+              <Button title="Login" color="blue" onPress={this.login}></Button>
+          </View>
+        </View>
+        
+        <View style={styles.body}>
+          <Text style={styles.textColor} onPress={this.login}>
+          BIENVENIDO A MI PRIMERA APP MÓVIL</Text>
+        </View>
+        
 
-				<View style ={styles.header}>
+        <View style={styles.footer}>
+          <View style={[styles.flex, styles.footerLeft]}>
+              <Text style={styles.textColor}>CIAPFA</Text>
+          </View>
+          <View style={[styles.flex, styles.footerCenter]}>
+              <Text style={styles.textColor}>HOLA CIAPFA</Text>
+          </View>
+          <View style={[styles.flex, styles.footerRight]}>
+              <Image source={require('./assets/CAMILO.png')} 
+              style={styles.logo}></Image>
+          </View>
+        </View>
 
-					<View style={styles.headerleft}>
-					<Image source={require('./assets/CAMILO.png')} style ={styles.logo}/>
-					</View>
 
-					<View style={styles.headerright}>
-					<Button title='Login' onPress={this.saludo}/>
-					</View>
+      </View>
+    )
 
-				</View>
-
-				<View style={[styles.body, styles.negrita]}>
-				<Text>hola mundo react native paso a paso</Text>
-				</View>
-
-			</View>
-			)
-	}
-
+  }
 
 }
 
 const styles = StyleSheet.create({
-	container : {
-		flex : 1,
-		flexDirection : 'column'
-	}, 
-	negrita :{
-		fontWeight : 'bold'
-	},
-	header:{
-		flex : 0.3,
-		flexDirection : 'row',
-		marginTop: 40
-	},
-	headerleft:{
-		flex : 1,
-		
-	},
-	headerright:{
-		flex : 1,
-	
-	},
-	body:{
-		flex : 1,
-		alignItems : 'center'
-		
-	},
-	logo : {
-		width : 100,
-		height : 100,
-		borderRadius: 50,
-		resizeMode: 'contain'
-	}
-
+  container : {
+    flex : 1,
+    flexDirection : 'column',
+    backgroundColor : 'green'
+  },
+  header : {
+    flex : 0.5,
+    flexDirection : 'row',
+    marginTop : 30
+  },
+  headerLeft : {
+    flex : 1,
+  },
+  headerRight : {
+    flex: 0.3,
+    marginRight : 10    
+  },
+  body : {
+    flex : 1,
+    alignItems : 'center',
+    justifyContent : 'center'
+  },
+  logo : {
+    width : 100,
+    height : 60,
+    resizeMode : 'contain',
+    borderRadius : 30
+  },
+  footer : {
+    flex : 1,
+    flexDirection : 'row'
+  },
+  flex : {
+    flex : 1
+  },
+  footerLeft : {
+    alignItems : 'center',
+    justifyContent : 'center'
+  },
+  footerCenter : {
+    alignItems : 'center',
+    justifyContent : 'center'
+  },
+  footerRight : {
+    alignItems : 'flex-end',
+    justifyContent : 'center'
+  },
+  textColor : {
+    color : 'white'
+  }
 })
 
-export default holaCiapfa
+export default HolaCiapfa
