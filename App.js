@@ -1,21 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react'
+import {View, Text, StyleSheet} from 'react-native'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Hoka Mundo React Native !</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+class holaCiapfa extends Component{
+
+	render(){
+
+		return(
+			<View style={styles.container}>
+			<Text>hola mundo react native paso a paso</Text>
+
+			</View>
+
+			)
+	}
+
+
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+	container :{
+		flex : 1,
+		justifyContent : 'center',
+		alignItems : 'center',
+		backgroundColor : 'red'
+
+	}
+})
+
+export default holaCiapfa
