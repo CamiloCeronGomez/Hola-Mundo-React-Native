@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react'
-import {View, Text, StyleSheet, Image, Button, Alert} from 'react-native'
+import {View, Text, StyleSheet, Image, Button, Alert, ImageBackground} from 'react-native'
 
 class HolaCiapfa extends Component {
 
@@ -11,7 +11,7 @@ class HolaCiapfa extends Component {
   render(){
 
     return(
-      <View style={styles.container}>
+      <ImageBackground source={require('./assets/fondo1.jpg')} style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerLeft}>
               <Image source={require('./assets/CAMILO.png')} 
@@ -42,7 +42,7 @@ class HolaCiapfa extends Component {
         </View>
 
 
-      </View>
+      </ImageBackground>
     )
 
   }
